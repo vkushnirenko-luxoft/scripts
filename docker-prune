@@ -1,0 +1,5 @@
+#!/bin/bash
+#removes stopped for 1h or dead docker containers and unused volumes 
+
+docker container prune -f --filter "until=1h"
+docker volume prune -f
