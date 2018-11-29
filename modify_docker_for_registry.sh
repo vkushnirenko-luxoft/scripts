@@ -8,7 +8,7 @@ case $version in
     sudo echo 'DOCKER_OPTS="--insecure-registry sdl.docker:5000"' | sudo tee -a /etc/default/docker
     ;;
 *)
-    sudo sed -i -e 's/^ExecStart.*/ExecStart=\/usr\/bin\/dockerd -H --insecure-registry sdl.docker:5000/g' /lib/systemd/system/docker.service
+    sudo sed -i -e 's/^ExecStart.*/ExecStart=\/usr\/bin\/dockerd --insecure-registry sdl.docker:5000/g' /lib/systemd/system/docker.service
     sudo systemctl daemon-reload
 esac
 
